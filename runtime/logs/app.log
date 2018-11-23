@@ -1,0 +1,368 @@
+2018-10-26 07:37:08 [127.0.0.1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'frontend\assets\AppAsset' not found' in D:\wamp\www\hqulf\api\views\layouts\main.php:13
+Stack trace:
+#0 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\View.php(250): yii\base\View->renderPhpFile()
+#1 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Controller.php(396): yii\base\View->renderFile()
+#2 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Controller.php(382): yii\base\Controller->renderContent()
+#3 D:\wamp\www\hqulf\api\controllers\SiteController.php(75): yii\base\Controller->render()
+#4 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): api\controllers\SiteController->actionIndex()
+#5 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams()
+#7 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction()
+#8 D:\wamp\www\hqulf\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction()
+#9 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest()
+#10 D:\wamp\www\hqulf\api\web\index.php(19): yii\base\Application->run()
+#11 {main}
+2018-10-26 07:37:08 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'deh13jhir2c9570q30p60hqd05'
+    '_csrf-backend' => 'ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"xªVÍV\'T^AX¡â2ö$!ý’¯:îã—T˜‘–\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'hqulf.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=deh13jhir2c9570q30p60hqd05; _csrf-backend=ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%05x%AAV%CDV%1A%27T%5EA%12X%A1%E22%14%F6%24%21%FD%92%AF%3A%EE%E3%97T%98%91%96%1C%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\VanDyke Software\\Clients\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;D:\\wamp\\bin\\php\\php5.6.31;C:\\composer;C:\\Program Files\\nodejs\\;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) PHP/5.6.31 Server at hqulf.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) PHP/5.6.31'
+    'SERVER_NAME' => 'hqulf.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'D:/wamp/www/hqulf/api/web/index.php'
+    'REMOTE_PORT' => '7536'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1540539428.682
+    'REQUEST_TIME' => 1540539428
+]
+2018-10-26 07:38:34 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: nonce_str' in D:\wamp\www\hqulf\common\lib\AI\Signature.php:15
+Stack trace:
+#0 D:\wamp\www\hqulf\api\modules\v1\controllers\GoodsController.php(157): API::generalocr()
+#1 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): api\modules\v1\controllers\GoodsController->actionOcr()
+#2 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#3 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams()
+#4 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction()
+#5 D:\wamp\www\hqulf\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction()
+#6 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest()
+#7 D:\wamp\www\hqulf\api\web\index.php(19): yii\base\Application->run()
+#8 {main}
+2018-10-26 07:38:34 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    'advanced-backend' => 'deh13jhir2c9570q30p60hqd05'
+    '_csrf-backend' => 'ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"xªVÍV\'T^AX¡â2ö$!ý’¯:îã—T˜‘–\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'hqulf.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=deh13jhir2c9570q30p60hqd05; _csrf-backend=ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%05x%AAV%CDV%1A%27T%5EA%12X%A1%E22%14%F6%24%21%FD%92%AF%3A%EE%E3%97T%98%91%96%1C%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\VanDyke Software\\Clients\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;D:\\wamp\\bin\\php\\php5.6.31;C:\\composer;C:\\Program Files\\nodejs\\;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) PHP/5.6.31 Server at hqulf.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) PHP/5.6.31'
+    'SERVER_NAME' => 'hqulf.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'D:/wamp/www/hqulf/api/web/index.php'
+    'REMOTE_PORT' => '7694'
+    'REDIRECT_URL' => '/v1/goods/ocr'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/goods/ocr'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1540539514.581
+    'REQUEST_TIME' => 1540539514
+]
+2018-10-26 07:41:44 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: nonce_str' in D:\wamp\www\hqulf\common\lib\AI\Signature.php:15
+Stack trace:
+#0 D:\wamp\www\hqulf\api\modules\v1\controllers\GoodsController.php(157): API::generalocr('???')
+#1 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): api\modules\v1\controllers\GoodsController->actionOcr()
+#2 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php:57}('???', '???')
+#3 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams('???')
+#4 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('???', '???')
+#5 D:\wamp\www\hqulf\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('???', '???')
+#6 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest('???')
+#7 D:\wamp\www\hqulf\api\web\index.php(19): yii\base\Application->run()
+#8 {main}
+2018-10-26 07:41:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'XDEBUG_SESSION_START' => '18391'
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'deh13jhir2c9570q30p60hqd05'
+    '_csrf-backend' => 'ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"xªVÍV\'T^AX¡â2ö$!ý’¯:îã—T˜‘–\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'hqulf.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=deh13jhir2c9570q30p60hqd05; _csrf-backend=ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%05x%AAV%CDV%1A%27T%5EA%12X%A1%E22%14%F6%24%21%FD%92%AF%3A%EE%E3%97T%98%91%96%1C%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\VanDyke Software\\Clients\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;D:\\wamp\\bin\\php\\php5.6.31;C:\\composer;C:\\Program Files\\nodejs\\;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) PHP/5.6.31 Server at hqulf.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) PHP/5.6.31'
+    'SERVER_NAME' => 'hqulf.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'D:/wamp/www/hqulf/api/web/index.php'
+    'REMOTE_PORT' => '7927'
+    'REDIRECT_URL' => '/v1/goods/ocr'
+    'REDIRECT_QUERY_STRING' => 'XDEBUG_SESSION_START=18391'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'XDEBUG_SESSION_START=18391'
+    'REQUEST_URI' => '/v1/goods/ocr?XDEBUG_SESSION_START=18391'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1540539649.707
+    'REQUEST_TIME' => 1540539649
+]
+2018-10-26 07:44:39 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: nonce_str' in D:\wamp\www\hqulf\common\lib\AI\Signature.php:15
+Stack trace:
+#0 D:\wamp\www\hqulf\api\modules\v1\controllers\GoodsController.php(157): API::generalocr('???')
+#1 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): api\modules\v1\controllers\GoodsController->actionOcr()
+#2 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php:57}('???', '???')
+#3 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams('???')
+#4 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('???', '???')
+#5 D:\wamp\www\hqulf\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('???', '???')
+#6 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest('???')
+#7 D:\wamp\www\hqulf\api\web\index.php(19): yii\base\Application->run()
+#8 {main}
+2018-10-26 07:41:55 [127.0.0.1][-][-][info][application] $_GET = [
+    'XDEBUG_SESSION_START' => '10408'
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'deh13jhir2c9570q30p60hqd05'
+    '_csrf-backend' => 'ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"xªVÍV\'T^AX¡â2ö$!ý’¯:îã—T˜‘–\";}'
+    'XDEBUG_SESSION' => '10408'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'hqulf.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=deh13jhir2c9570q30p60hqd05; _csrf-backend=ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%05x%AAV%CDV%1A%27T%5EA%12X%A1%E22%14%F6%24%21%FD%92%AF%3A%EE%E3%97T%98%91%96%1C%22%3B%7D; XDEBUG_SESSION=10408'
+    'PATH' => 'C:\\Program Files\\VanDyke Software\\Clients\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;D:\\wamp\\bin\\php\\php5.6.31;C:\\composer;C:\\Program Files\\nodejs\\;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) PHP/5.6.31 Server at hqulf.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) PHP/5.6.31'
+    'SERVER_NAME' => 'hqulf.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'D:/wamp/www/hqulf/api/web/index.php'
+    'REMOTE_PORT' => '8022'
+    'REDIRECT_URL' => '/v1/goods/ocr'
+    'REDIRECT_QUERY_STRING' => 'XDEBUG_SESSION_START=10408'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'XDEBUG_SESSION_START=10408'
+    'REQUEST_URI' => '/v1/goods/ocr?XDEBUG_SESSION_START=10408'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1540539715.338
+    'REQUEST_TIME' => 1540539715
+]
+2018-10-26 07:48:38 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined index: nonce_str' in D:\wamp\www\hqulf\common\lib\AI\Signature.php:15
+Stack trace:
+#0 D:\wamp\www\hqulf\api\modules\v1\controllers\GoodsController.php(157): API::generalocr('???')
+#1 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): api\modules\v1\controllers\GoodsController->actionOcr()
+#2 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php:57}('???', '???')
+#3 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams('???')
+#4 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('???', '???')
+#5 D:\wamp\www\hqulf\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('???', '???')
+#6 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest('???')
+#7 D:\wamp\www\hqulf\api\web\index.php(19): yii\base\Application->run()
+#8 {main}
+2018-10-26 07:44:46 [127.0.0.1][-][-][info][application] $_GET = [
+    'XDEBUG_SESSION_START' => '10408'
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'deh13jhir2c9570q30p60hqd05'
+    '_csrf-backend' => 'ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"xªVÍV\'T^AX¡â2ö$!ý’¯:îã—T˜‘–\";}'
+    'XDEBUG_SESSION' => '10408'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'hqulf.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=deh13jhir2c9570q30p60hqd05; _csrf-backend=ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%05x%AAV%CDV%1A%27T%5EA%12X%A1%E22%14%F6%24%21%FD%92%AF%3A%EE%E3%97T%98%91%96%1C%22%3B%7D; XDEBUG_SESSION=10408'
+    'PATH' => 'C:\\Program Files\\VanDyke Software\\Clients\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;D:\\wamp\\bin\\php\\php5.6.31;C:\\composer;C:\\Program Files\\nodejs\\;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) PHP/5.6.31 Server at hqulf.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) PHP/5.6.31'
+    'SERVER_NAME' => 'hqulf.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'D:/wamp/www/hqulf/api/web/index.php'
+    'REMOTE_PORT' => '8311'
+    'REDIRECT_URL' => '/v1/goods/ocr'
+    'REDIRECT_QUERY_STRING' => 'XDEBUG_SESSION_START=10408'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'XDEBUG_SESSION_START=10408'
+    'REQUEST_URI' => '/v1/goods/ocr?XDEBUG_SESSION_START=10408'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1540539886.08
+    'REQUEST_TIME' => 1540539886
+]
+2018-10-26 07:49:08 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'curl_setopt(): CURLOPT_SSL_VERIFYHOST no longer accepts the value 1, value 2 will be used instead' in D:\wamp\www\hqulf\common\lib\AI\HttpUtil.php:46
+Stack trace:
+#0 D:\wamp\www\hqulf\common\lib\AI\API.php(43): HttpUtil::doHttpPost('???', '???')
+#1 D:\wamp\www\hqulf\api\modules\v1\controllers\GoodsController.php(157): API::generalocr('???')
+#2 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): api\modules\v1\controllers\GoodsController->actionOcr()
+#3 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\InlineAction.php:57}('???', '???')
+#4 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Controller.php(156): yii\base\InlineAction->runWithParams('???')
+#5 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Module.php(523): yii\base\Controller->runAction('???', '???')
+#6 D:\wamp\www\hqulf\vendor\yiisoft\yii2\web\Application.php(102): yii\base\Module->runAction('???', '???')
+#7 D:\wamp\www\hqulf\vendor\yiisoft\yii2\base\Application.php(380): yii\web\Application->handleRequest('???')
+#8 D:\wamp\www\hqulf\api\web\index.php(19): yii\base\Application->run()
+#9 {main}
+2018-10-26 07:48:41 [127.0.0.1][-][-][info][application] $_GET = [
+    'XDEBUG_SESSION_START' => '10408'
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'deh13jhir2c9570q30p60hqd05'
+    '_csrf-backend' => 'ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"xªVÍV\'T^AX¡â2ö$!ý’¯:îã—T˜‘–\";}'
+    'XDEBUG_SESSION' => '10408'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'hqulf.com'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'advanced-backend=deh13jhir2c9570q30p60hqd05; _csrf-backend=ac26a26d25ac3d51f8d6e16dc69c1f3196c49ee79d9c33769635b4fc6e709185a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22%05x%AAV%CDV%1A%27T%5EA%12X%A1%E22%14%F6%24%21%FD%92%AF%3A%EE%E3%97T%98%91%96%1C%22%3B%7D; XDEBUG_SESSION=10408'
+    'PATH' => 'C:\\Program Files\\VanDyke Software\\Clients\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\110\\Tools\\Binn\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;D:\\wamp\\bin\\php\\php5.6.31;C:\\composer;C:\\Program Files\\nodejs\\;'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.27 (Win32) PHP/5.6.31 Server at hqulf.com Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.27 (Win32) PHP/5.6.31'
+    'SERVER_NAME' => 'hqulf.com'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/wamp/www/hqulf/api/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'D:/wamp/www/hqulf/api/web/index.php'
+    'REMOTE_PORT' => '8732'
+    'REDIRECT_URL' => '/v1/goods/ocr'
+    'REDIRECT_QUERY_STRING' => 'XDEBUG_SESSION_START=10408'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'XDEBUG_SESSION_START=10408'
+    'REQUEST_URI' => '/v1/goods/ocr?XDEBUG_SESSION_START=10408'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1540540121.345
+    'REQUEST_TIME' => 1540540121
+]
