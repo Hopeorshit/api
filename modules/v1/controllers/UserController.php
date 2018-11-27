@@ -5,6 +5,7 @@ namespace api\modules\v1\controllers;
 use api\models\Needs as NeedsModel;
 use api\models\User as UserModel;
 use api\models\Goods as GoodsModel;
+use api\models\User;
 use api\models\Want as WantModel;
 use Faker\Provider\File;
 use Yii;
@@ -60,14 +61,13 @@ class UserController extends BaseActiveController
      * @description  获取用户发布的信息
      * @return array
      */
-    public function actionGoods($page)
+    public function actionGoods($page,$page_size)
     {
-        $pageSize = 10;
-        $offset = $pageSize * ($page - 1);
+        $offset = $page_size * ($page - 1);
         $uid = UserTokenService::getCurrentTokenVar('uid');
         $goods = GoodsModel::find()->where(['uid' => $uid, 'status' => 1])->
-        orderBy('created DESC')->offset($offset)->limit($pageSize)->all();
-        return self::success($goods);
+        orderBy('created DESC')->offset($offset)->limit($page_size)->all();
+        return self::success(['list'=>$goods]);
     }
 
     /**
@@ -111,6 +111,23 @@ class UserController extends BaseActiveController
         $userModel->nickName = $request['nickName'];
         $userModel->update();
         return self::success($userModel);
+    }
+
+    /**
+     * @description 用户绑定学号
+     * @param student_id
+     * @return array
+     */
+    public function actionBind(){
+        $request = Yii::$app->request->bodyParams;
+        $student_id=$request['student_id'];
+        $form_id=$request['form_id'];
+        $uid = UserTokenService::getCurrentTokenVar('uid');
+        $userModel=User::findOne($uid);
+        $userModel->student_id=$student_id;
+        $userModel->form_id=$form_id;
+        $userModel->update();
+        return self::success();
     }
 
 }

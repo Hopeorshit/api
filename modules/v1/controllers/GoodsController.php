@@ -7,6 +7,10 @@ use api\models\Image as ImageModel;
 use api\modules\CommonFunc;
 use Yii;
 use api\modules\v1\service\UserToken as UserTokenService;
+use api\modules\v1\service\AipOcr;
+use api\modules\v1\service\FoundMsg;
+use api\models\User as UserModel;
+
 require_once Yii::getAlias("@common/lib/AI/include.php");
 class GoodsController extends BaseActiveController
 {
@@ -27,9 +31,12 @@ class GoodsController extends BaseActiveController
     {
         $request = Yii::$app->request->bodyParams;
         $description = $request['description'];
+        $title = $request['title'];
         $phone = $request['phone'];
         $is_found = $request['is_found'];
+        $is_card = $request['is_card'];
         $way = $request['way'];
+
         $uid = UserTokenService::getCurrentTokenVar('uid');
         if (!is_dir("image/{$uid}")) {
             mkdir("image/{$uid}");//根据用户的uid命名文件夹，username可能文件夹命名不支持
@@ -37,10 +44,12 @@ class GoodsController extends BaseActiveController
         }
         $GoodsModel = new GoodsModel();
         $GoodsModel->uid = $uid;
+        $GoodsModel->title=$title;
         $GoodsModel->description = $description;
         $GoodsModel->phone = $phone;
         $GoodsModel->way = $way;
         $GoodsModel->is_found = $is_found ? 1 : 0;
+        $GoodsModel->is_card = $is_card;
         $GoodsModel->status = 1;
         if (!$is_found) {
             $domain = YII::$app->params['domain'];
@@ -50,12 +59,34 @@ class GoodsController extends BaseActiveController
             $GoodsModel->head_url = $domain.'images/found.jpg';
         }
         $GoodsModel->save();
+
+        $msgRe='没有发送';
+        if($is_card){
+            if(isset($request['student_id'])){
+                $userModel=UserModel::find()->where(['student_id' =>$request['student_id']])->one();
+                $foundMsg=new FoundMsg();
+                if($userModel) {
+                    //TODO 一种是发布信息的时候触发，另一种是绑定的时候触发
+                    $msgRe=$foundMsg->send($userModel['form_id'], $userModel['openid'],$GoodsModel['id'],$way,$phone);
+                }
+            }
+        }
         $result = [
             'goods_id' => $GoodsModel['id'],
-            'uid' => $GoodsModel['uid']
+            'uid' => $GoodsModel['uid'],
+            'msgRe'=>$msgRe
         ];
         return self::success($result);
     }
+
+//    //内部API 通过crl_post 来触发
+//    public function actionFound_msg(){
+//        $request = Yii::$app->request->bodyParams;
+//        $foundMsg=new FoundMsg();
+//        $foundMsg->send($request['form_id'], $request['openid'],$request['goods_id'],$request['way'],$request['phone']);
+//        return self::success();
+//    }
+
 
     /**
      * @params int $ishead 表示是否是封面
@@ -131,23 +162,22 @@ class GoodsController extends BaseActiveController
      * @param string $text
      * @return array $GoodsModel 返回user表的商品模型关联
      */
-    public function actionSearch($text, $page)
-    {
-        $pageSize = 10;
-        $offset = $pageSize * ($page - 1);
+    public function actionSearch($text, $page,$page_size)
+    {;
+        $offset = $page_size * ($page - 1);
         $goods = GoodsModel::find()->where(['like', 'description', $text])->andWhere(['status'=>1])->
-        orderBy('created DESC')->with('user')->offset($offset)->limit($pageSize)->asArray()->all();
+        orderBy('created DESC')->with('user')->offset($offset)->limit($page_size)->asArray()->all();
         foreach ( $goods as &$item){
             $item['created']=CommonFunc::get_last_time(strtotime($item['created']));
         }
-        return self::success($goods);
+        return self::success(['list'=>$goods]);
     }
 
     /**
-     * @description 测试并接入腾讯AI开发平台
+     * @description 测试腾讯AI开发平台
      *
      */
-    public function actionOcr(){
+    public function actionOcr_test(){
        $AIconfig=Yii::$app->params['AI'];
        \Configer::setAppInfo($AIconfig['APPID'],$AIconfig['APPKEY']);
        $image_data = file_get_contents('images/card.jpg');//File_get_contents 去读取临时目录的文件而不是保存后的
@@ -155,8 +185,60 @@ class GoodsController extends BaseActiveController
             'image' => base64_encode($image_data),
         );
         $response = \API::generalocr($params);
-        var_dump($response);
-        return $response;
+        return  json_decode($response);
+    }
+    /**
+     * @description 接入腾讯AI开发平台
+     *
+     */
+    public function actionOcr(){
+        $imageUrlLocal = "image/";
+        $file = $_FILES["image"];
+        $fp = $imageUrlLocal .time() . '.jpg';
+        if (move_uploaded_file($file['tmp_name'], $fp)) {//保存文件
+            $image_data = file_get_contents($fp);//File_get_contents 去读取临时目录的文件而不是保存后的
+            $AIconfig = Yii::$app->params['AI'];
+            \Configer::setAppInfo($AIconfig['APPID'], $AIconfig['APPKEY']);
+            $params = array(
+                'image' => base64_encode($image_data),
+            );
+            $response = \API::generalocr($params);
+            return  json_decode($response);
+        }else{
+            return self::success('','40001','识别失败');
+        }
+    }
+
+    /**
+     * @description 接入百度AI开发平台
+     * 百度AI 存在方向检测不出的问题
+     */
+    public function actionBaidu_ocr_test(){
+        $baiDuAI=Yii::$app->params['BaiDuAI'];
+        $aipOcr=new AipOcr($baiDuAI['appId'],$baiDuAI['apikey'],$baiDuAI['secretKey']);
+        $domain = YII::$app->params['domain'];
+        $image_data = file_get_contents('images/card.jpg');
+        $res=$aipOcr->basicAccurate($image_data);
+        return $res;
+    }
+
+    /**
+     * @description 接入百度AI开发平台
+     * 百度AI 存在方向检测不出的问题
+     */
+    public function actionBaidu_ocr(){
+        $imageUrlLocal = "image/";
+        $file = $_FILES["image"];
+        $fp = $imageUrlLocal .time() . '.jpg';
+        if (move_uploaded_file($file['tmp_name'], $fp)) {//保存文件
+            $image_data = file_get_contents($fp);
+            $baiDuAI=Yii::$app->params['BaiDuAI'];
+            $aipOcr=new AipOcr($baiDuAI['appId'],$baiDuAI['apikey'],$baiDuAI['secretKey']);
+            $res=$aipOcr->basicAccurate($image_data);
+            return $res;
+        }else{
+            return self::success('','40001','识别失败');
+        }
     }
 
 }

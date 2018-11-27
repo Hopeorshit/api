@@ -60,6 +60,7 @@ class UserToken
         else{
             $newUser=new User();
             $newUser->openid=$openid;
+            $newUser->unionid=$wxResult['unionid'];
             $newUser->save();
             $uid=$newUser->id;
         }
@@ -126,6 +127,9 @@ class UserToken
         $userModel->gender = $userInfo['gender'];
         if(!$userModel->nickName) {
             $userModel->nickName = $userInfo['nickName'];
+        }
+        if(!$userModel->unionid){
+            $userModel->unionid=$userInfo['unionId'];
         }
         $userModel->city =$userInfo['city'];
         $userModel->province=$userInfo['province'];
