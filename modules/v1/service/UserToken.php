@@ -60,7 +60,7 @@ class UserToken
         else{
             $newUser=new User();
             $newUser->openid=$openid;
-            $newUser->unionid=$wxResult['unionid'];
+//            $newUser->unionid=$wxResult['unionId'];  若没关注过公众号，则没有unionId
             $newUser->save();
             $uid=$newUser->id;
         }
@@ -135,7 +135,7 @@ class UserToken
         $userModel->province=$userInfo['province'];
         $userModel->country=$userInfo['country'];
         $userModel->openid=$userInfo['openId'];
-       // $userModel->unionid=$userInfo['unionId'];
+        $userModel->unionid=$userInfo['unionId'];
         $uid=$userModel['id'];
         if(!$userModel->avatarUrl) {
             //存照片
