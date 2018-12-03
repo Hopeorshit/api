@@ -116,6 +116,7 @@ class CommonFunc
      */
     public static function get_last_time($targetTime)
     {
+        date_default_timezone_set('Etc/GMT-8');
         // 今天最大时间
         $todayLast = strtotime(date('Y-m-d 23:59:59'));
         $agoTimeTrue = time() - $targetTime;

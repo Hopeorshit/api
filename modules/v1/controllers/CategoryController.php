@@ -2,7 +2,6 @@
 
 namespace api\modules\v1\controllers;
 
-use api\models\Category;
 use api\models\Goods as GoodsModel;
 use api\modules\CommonFunc;
 
@@ -19,6 +18,7 @@ class CategoryController extends BaseActiveController
      */
     public function actionId($categoryID, $page,$page_size)
     {
+        date_default_timezone_set('Etc/GMT-8');
         $offset = $page_size * ($page - 1);
         if ($categoryID == 0) {
             $goods = GoodsModel::find()->where(['status' => 1])->with('user', 'images')->
@@ -51,6 +51,15 @@ class CategoryController extends BaseActiveController
         foreach ($goods as &$item) {
             $item['created'] = CommonFunc::get_last_time(strtotime($item['created']));
         }
+        return self::success(['list'=>$goods]);
+    }
+
+    public function actionYesterday(){
+        date_default_timezone_set('Etc/GMT-8');
+        $startTime=date('Y-m-d 00:00:00',strtotime("-1 day"));
+        $endTime = date('Y-m-d 23:59:59',strtotime("-1 day"));
+        $goods = GoodsModel::find()->where(['status'=>1])->andwhere(['between','created',$startTime,$endTime])->with('user', 'images')
+            ->orderBy('created DESC')->asArray()->all();
         return self::success(['list'=>$goods]);
     }
 
