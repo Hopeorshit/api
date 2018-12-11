@@ -18,7 +18,7 @@ class FoundMsg extends WxMessage
     public function send($formID,$openid,$goods_id,$way,$phone){
         $this->tplID=self::templateID;
         $this->formID=$formID;
-        $this->page='/pages/goodsdetail/goodsdetail?goods_id='.$goods_id.'&if_found=1';
+        $this->page='pages/goodsdetail/goodsdetail?goods_id='.$goods_id.'&if_found=1';
         $this->prepareMessageData($way,$phone);
         return parent::sendMessage($openid);
     }

@@ -11,7 +11,7 @@ use Faker\Provider\File;
 use Yii;
 use api\modules\v1\service\UserToken as UserTokenService;
 
-
+use api\modules\v1\service\FoundMsg;
 require_once Yii::getAlias("@common/lib/encrypt/wxBizDataCrypt.php");
 
 class UserController extends BaseActiveController
@@ -127,7 +127,14 @@ class UserController extends BaseActiveController
         $userModel->student_id=$student_id;
         $userModel->form_id=$form_id;
         $userModel->update();
-        return self::success();
+
+        $goodModel=GoodsModel::find()->where(['student_id'=>$student_id])->one();
+        $msgRe='没有发送';
+        if($goodModel) {
+            $foundMsg = new FoundMsg();
+            $msgRe = $foundMsg->send($request['form_id'], $userModel['openid'], $goodModel['id'], $goodModel['way'], $goodModel['phone']);
+        }
+        return self::success(['msg'=>$msgRe]);
     }
 
 }

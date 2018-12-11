@@ -63,14 +63,19 @@ class GoodsController extends BaseActiveController
         $msgRe='没有发送';
         if($is_card){
             if(isset($request['student_id'])){
-                $userModel=UserModel::find()->where(['student_id' =>$request['student_id']])->one();
+                $GoodsModel->student_id=$request['student_id'];
+                $GoodsModel->update();
+                $userModels=UserModel::find()->where(['student_id' =>$request['student_id']])->all();
                 $foundMsg=new FoundMsg();
-                if($userModel) {
-                    //TODO 一种是发布信息的时候触发，另一种是绑定的时候触发
-                    $msgRe=$foundMsg->send($userModel['form_id'], $userModel['openid'],$GoodsModel['id'],$way,$phone);
+                if($userModels) {
+                    foreach ($userModels as $item) {
+                        //TODO 一种是发布信息的时候触发，另一种是绑定的时候触发
+                        $msgRe = $foundMsg->send($item['form_id'], $item['openid'], $GoodsModel['id'], $way, $phone);
+                    }
                 }
             }
         }
+
         $result = [
             'goods_id' => $GoodsModel['id'],
             'uid' => $GoodsModel['uid'],
@@ -165,7 +170,7 @@ class GoodsController extends BaseActiveController
     public function actionSearch($text, $page,$page_size)
     {;
         $offset = $page_size * ($page - 1);
-        $goods = GoodsModel::find()->where(['like', 'description', $text])->andWhere(['status'=>1])->
+        $goods = GoodsModel::find()->where(['like', 'title', $text])->andWhere(['status'=>1])->
         orderBy('created DESC')->with('user')->offset($offset)->limit($page_size)->asArray()->all();
         foreach ( $goods as &$item){
             $item['created']=CommonFunc::get_last_time(strtotime($item['created']));

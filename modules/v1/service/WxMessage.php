@@ -44,6 +44,8 @@ class WxMessage
             'data' => $this->data,
             'emphasis_keyword' => $this->emphasisKeyWord
         ];
+//        $cache=Yii::$app->cache;
+//        $cache->set('00',json_encode($data),'7200');
         $result = CommonFunc::curl_post($this->sendUrl, $data);
         $result = json_decode($result, true);
         if ($result['errcode'] == 0) {
