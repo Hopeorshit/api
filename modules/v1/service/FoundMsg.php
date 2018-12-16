@@ -18,7 +18,7 @@ class FoundMsg extends WxMessage
     public function send($formID,$openid,$goods_id,$way,$phone){
         $this->tplID=self::templateID;
         $this->formID=$formID;
-        $this->page='pages/goodsdetail/goodsdetail?goods_id='.$goods_id.'&if_found=1';
+        $this->page='pages/goodsdetail/goodsdetail?goods_id='.$goods_id.'&is_found=1';
         $this->prepareMessageData($way,$phone);
         return parent::sendMessage($openid);
     }
@@ -29,13 +29,13 @@ class FoundMsg extends WxMessage
            $text='指定地点';
         }
         if($way==2){
-            $text='qq';
+            $text='联系qq';
         }
         if($way==3){
-            $text='微信';
+            $text='联系微信';
         }
         if($way==4){
-            $text='手机';
+            $text='联系手机';
         }
         $data=[
             'keyword1'=>[//物品名称

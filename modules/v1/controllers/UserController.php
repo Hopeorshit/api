@@ -128,7 +128,7 @@ class UserController extends BaseActiveController
         $userModel->form_id=$form_id;
         $userModel->update();
 
-        $goodModel=GoodsModel::find()->where(['student_id'=>$student_id])->one();
+        $goodModel=GoodsModel::find()->where(['student_id'=>$student_id])->orderBy('created DESC ')->one();
         $msgRe='没有发送';
         if($goodModel) {
             $foundMsg = new FoundMsg();
